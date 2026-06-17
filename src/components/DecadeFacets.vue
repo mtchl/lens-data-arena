@@ -148,6 +148,7 @@
 		display: flex;
 		margin:2rem auto;
 		column-gap: 2px;
+/*		filter:invert(0.8);*/
 	}
 
 	.tile{
@@ -161,7 +162,7 @@
 
 	.tile .label{
 		position:absolute;
-		bottom:-0.75rem;
+		bottom:-1.0rem;
 		color:#9d9d9d;
 		z-index:1;
 		width:100%;
@@ -185,7 +186,7 @@
 		position:absolute;
 		bottom:0;
 		cursor:pointer;
-		background-color: var(--ala-ocean);
+		background-color: var(--ala-dark-orange);
 		opacity:0.25;
 	}
 
@@ -193,6 +194,7 @@
 		font-size: 0.6rem;
 		color:#9d9d9d;
 		position:absolute;
+		left:0.5rem;
 	}
 
 	@media only screen and (max-width: 720px) {

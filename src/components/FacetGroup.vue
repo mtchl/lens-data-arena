@@ -195,20 +195,21 @@
 
 <style type="text/css">
   li {
-    color:#aaa;
+/*    color:#aaa;*/
   }
 
   .facetList{
     list-style: none;
     overflow-x: hidden;
     padding:0;
-    margin: 0 1.5em 0 0;
+    margin: 0 3em 0 0;
     font-size:13px;
     font-weight: 400;
     line-height: 1.5em;
     height:400px;
     overflow-y:auto;
     display: block;
+
    
   }
 
@@ -254,7 +255,7 @@
   }
 
   .facetList li .count{
-    color:#9d9d9d;
+/*    color:#9d9d9d;*/
     font-size:90%;
     position:absolute;
     right:0;
@@ -275,7 +276,7 @@
     height:100%;
 
     z-index:1;
-    opacity:0.5;
+    opacity:0.25;
     display: block;
 
   }

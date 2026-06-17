@@ -364,11 +364,20 @@
     transform-origin: top left;
   }
 
-  .facet-wrapper{
-/*    transform:scale(1.25);*/
-/*    transform-origin: top left;*/
-/*    height:unset;*/
+  .data-arena-wrapper .col.right section#facets{
+    transform: scale(1.3);
+    margin: 5rem 0 8rem 20rem;
+    filter: invert(0.8);
+  }
 
+  .data-arena-wrapper .col.right section#facets .facetColumn h4{
+    margin-bottom:1rem;
+  }
+
+  .data-arena-wrapper .col.right section#decades{
+    transform: scale(1.3);
+    margin: 5rem 0 5rem 20rem;
+    filter: invert(0.8);
   }
 
 
@@ -378,7 +387,7 @@
   }
   #facets, #decades, .content-wrapper{
     padding:0 1em;
-    max-width:1100px;
+    max-width:1200px;
     margin:0 auto;
     overflow-x: hidden;
   }
