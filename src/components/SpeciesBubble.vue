@@ -97,7 +97,7 @@
 		background-size: cover;
 		background-position: 50% 50%;
 /* 		overflow: hidden;*/
-		border: 1.0px solid var(--ala-darkgrey); 
+		border: 1.5px solid #222; 
 /*		var(--ala-light-orange);*/
 		transition-property: width, height;
 		transition-duration: 0.5s;
@@ -126,7 +126,8 @@
 	.root .bubble{
 /*		background-color: var(--ala-ocean-quarter);*/
 /*		background-size: cover;*/
-		background:none;
+		background-color:#637073;
+/*		opacity:0.8;*/
 		border:none;
 		cursor:default;
 	}

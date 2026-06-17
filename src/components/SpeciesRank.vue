@@ -243,8 +243,9 @@
 		padding:0 1rem;
 		display: flex;
 		flex-wrap: wrap;
-		justify-content: space-around;
-		gap:1rem;
+ 		justify-content: center;
+		gap:5rem;
+
 
 	}
 
@@ -252,15 +253,20 @@
 		margin:0.5rem auto;
 		width:100%;
 		padding-bottom: 0.5rem;
-		font-size:90%;
+		font-size:100%;
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: center;
 		align-items: flex-end;
 	}
 
+	.lifeform-wrapper .filterTag {
+		filter:invert(0.8);
+	}
+
 	.lifeform-wrapper h4{
 		margin-right:0.5rem;
+		color:#aaa;
 	}
 
 	.rank-footer select{
@@ -268,7 +274,7 @@
 	}
 
 	.speciesBubble{
-		min-width:360px;
+		min-width:480px;
 		padding:0;
 		margin-bottom:2rem;
 		position:relative;
@@ -278,6 +284,7 @@
 	}
 
 	.speciesBubble h4{
+		color:#aaa;
 		position:absolute;
 		top:0;
 		margin:0;
@@ -292,7 +299,8 @@
 		width:80px;
 		font-size:0.7rem;
 		line-height: 1.0em;
-		color:var(--ala-darkgrey);
+/*		color:var(--ala-darkgrey);*/
+		color:#aaa;
 	}
 
 	.speciesBubble .deeplink{

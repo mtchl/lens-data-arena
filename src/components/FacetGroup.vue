@@ -194,6 +194,10 @@
 </script>
 
 <style type="text/css">
+  li {
+    color:#aaa;
+  }
+
   .facetList{
     list-style: none;
     overflow-x: hidden;
@@ -263,14 +267,15 @@
   }
 
   .facetList li .bar{
-    background-color: var(--ala-ocean);
+    background-color: var(--ala-dark-orange);
+/*    var(--ala-ocean);*/
 /*    position: absolute;*/
 /*    left:0;*/
 /*    top:0;*/
     height:100%;
 
     z-index:1;
-    opacity:0.25;
+    opacity:0.5;
     display: block;
 
   }

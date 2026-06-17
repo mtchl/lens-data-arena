@@ -16,76 +16,8 @@
 
 <template>
 
-    <Menu home-path="."/>
- 
-    <section>
-       <div class="content-wrapper landing"> 
-         <!-- <h1>ALA <img src="./assets/img/title-asterisk.svg" class="title-asterisk"> Explorer Hub</h1>  -->
-
-         <h1>ALA<span class="logotype">
-          <img src="./assets/img/lens.svg" class="title-logo" alt="">Lens</span>
-        </h1>
-         <h2 class="tagline">New views of the Atlas of Living Australia</h2>
-
-         
-         <div class="intro-wrap">
-          <img src="./assets/img/bubble-concrete.png" class="landing-bubble" alt="Nested circles showing images of Australian wildlife and flora">
-
-          <div class="intro-text">
-            <p>Try out new views of the ALA, designed to encourage exploration and discovery of species, data and place.</p> 
-            <p>This site presents outcomes of a research partnership with the Australian National University that aims to investigate and enrich user experiences of biodiversity data. </p>
-
-            <p class="image-credits">Images (all CC-BY-NC): 
-              Kai Squires, andrewpavlov, mikegrow,
-              kerrbrad, Matt Campbell, Toby Esplin,
-              darcywhittaker
-            </p>
-          </div>
-       </div>
-
-
-
-        <h2>Data Stories</h2>
-        <h4>Dive into data in the ALA with these interactive investigations</h4>
-        
-        <div class="ds-tile-wrap">
-          <a class="ds-tile" href="data-stories/digging-into-data/">
-            <h4>
-              Digging into Data
-            </h4>
-            <img src="./assets/img/digging-icon.png" alt="">
-            <p>This ALA is made of biodiversity data; but where does this data come from?</p>
-          </a>
-
-         
-            <a class="ds-tile" href="data-stories/threatened-species/">
-              <h4>
-                 Threatened Species
-              </h4>
-              <img src="./assets/img/threatened-icon.png" alt="">
-              <p>What does the ALA reveal about Australia's threatened species, and our efforts to protect them? </p>
-            </a>
-
-
-          <a class="ds-tile" href="data-stories/seasonal-change/">
-            <h4>
-              Seasonal Change
-            </h4>
-            <img src="./assets/img/seasonal-icon.png" alt="">
-            <p>The cycle of the seasons shapes life around us; how does it shape the data in the ALA?</p>
-          </a>
-
-        </div>
-
-
-        <h2>Lens<img src="./assets/img/lens.svg" class="title-logo" alt="">Interface</h2>
-        <h4>Browse, discover, facet and filter: the Lens interface is a new way to explore the ALA. Start at one of our favourite spots, or</h4>
-
-        <button @click="locateMe">Use my location</button>
-
-      </div>
-    </section>
-
+ <div class="data-arena-wrapper">
+  <div class="col left">
 
     <div class="focusInfoBar">
       <div class="obsCountWrapper">
@@ -111,12 +43,6 @@
     <div class="mapWrapper">
       <HexMap v-if="geoFilter" :query="hexMapQuery" :record-count="occurrenceData ? occurrenceData.totalRecords : null" :query-loaded="queryLoaded" :obs="occurrenceData ? groupedOccurrences : []" :filterCenter="{lat: geoFilter.lat, lng: geoFilter.lon}" :filterRadius="geoFilter.radius" :zoom="mapZoom" ref="hexmap" @set-geo-focus="setGeoFilter" @mapready="mapInit" @updateBins="updateMapBins" @show-modal="setObsModal"/>
 
-
-
-
-
-
-       
         <div class="obsTileWrapper" ref="tilewrapper" v-if="occurrenceData">
 
           <div class="obsTiles">
@@ -158,8 +84,11 @@
       </div>
 
     </div>
+  </div>
 
 
+  <div class="col right">
+  <!-- data arena right panel -->
 
      <section class="viewControl">
 
@@ -177,12 +106,8 @@
 
 
     <section v-show="viewMode=='species'">
-      <speciesRank v-if="viewMode=='species' && geoFilter" :geoFilter="geoFilter" :speciesGroups="speciesGroups" :bubbleSize="360">
+      <speciesRank v-if="viewMode=='species' && geoFilter" :geoFilter="geoFilter" :speciesGroups="speciesGroups" :bubbleSize="480">
       </speciesRank>
-    </section>
-
-    <section v-if="viewMode=='species'">
-      <speciesSearch></speciesSearch>
     </section>
 
     <section id="facets" v-show="viewMode=='data'">
@@ -200,7 +125,11 @@
       </div>
     </section>
 
-    <Footer/>
+  </div>
+</div>
+
+
+ 
 
 </template>
 
@@ -412,6 +341,37 @@
 
 <style type="text/css">
 
+  .data-arena-wrapper{
+    width:4800px;
+    height:960px;
+    position:relative;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+  }
+
+  .data-arena-wrapper .col.left{
+    width:55%;
+  }
+
+   .data-arena-wrapper .col.right{
+    width:45%;
+  }
+
+  .data-arena-wrapper .col.right section{
+    width:80%;
+    transform: scale(1.25);
+    transform-origin: top left;
+  }
+
+  .facet-wrapper{
+/*    transform:scale(1.25);*/
+/*    transform-origin: top left;*/
+/*    height:unset;*/
+
+  }
+
+
   section{
     display: block;
     clear: both;
@@ -576,7 +536,9 @@
 
   .mapWrapper{
     position:relative;
-    height:65vh;
+/*    height:65vh;*/
+    height:100%;
+    width:100%;
   }
 
   .dsLink{
@@ -739,7 +701,7 @@
     background-color: var(--ala-orange);
     padding:0.25rem;
     box-sizing: border-box;
-    position:sticky;
+    position:relative;
     top:0;
     z-index:99999;
     height:2.9rem;
