@@ -17,16 +17,12 @@ export default defineConfig({
       '@': fileURLToPath(new URL('./src', import.meta.url))
     }
   },
-  base: '/lens/',
   build: {
     outDir,
     emptyOutDir:true,
     rollupOptions:{
       input:{
-        main: resolve(root,'index.html'),
-        diggingIntoData: resolve(root, 'data-stories/digging-into-data/index.html'),
-        threatenedSpecies: resolve(root, 'data-stories/threatened-species/index.html'),
-        seasonalChange: resolve(root, 'data-stories/seasonal-change/index.html')
+        main: resolve(root,'index.html')
       }
     }
   }
