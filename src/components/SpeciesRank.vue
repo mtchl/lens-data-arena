@@ -108,7 +108,8 @@
 				apiState,
 				useStateConservationStatus:false,
 				useNationalConservationStatus:true,
-				siteRoot: import.meta.env.BASE_URL
+				siteRoot: ""
+				// siteRoot: import.meta.env.BASE_URL
 			}
 		},
 
