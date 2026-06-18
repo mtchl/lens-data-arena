@@ -107,7 +107,7 @@
         mapOptions: { attributionControl: false, 
                       zoomControl:false, 
                       doubleClickZoom:false, 
-                      scrollWheelZoom:false, 
+                      // scrollWheelZoom:false, 
                       dragging:true},
         focusMarkerId:"",
         bounceMarkerId:"",
