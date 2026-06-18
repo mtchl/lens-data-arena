@@ -173,7 +173,8 @@
                 modalObs:null,
                 mapBins:null,
                 showRecenterButton:false,
-                siteRoot: import.meta.env.BASE_URL,
+                siteRoot:""
+                // siteRoot: import.meta.env.BASE_URL,
 
               }
 
