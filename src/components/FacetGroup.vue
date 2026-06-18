@@ -40,7 +40,8 @@
                   countryConservation: {label: "National Conservation Status"},
                   
                 },
-          siteRoot: import.meta.env.BASE_URL
+          // siteRoot: import.meta.env.BASE_URL
+          siteRoot:""
 
         }
       },
